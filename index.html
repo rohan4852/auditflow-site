@@ -3,154 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IsoFlow AI - Automated Evidence Mapping</title>
+    <title>IsoFlow AI - Automated ISO 27001 Compliance</title>
+    <meta name="description" content="Stop manual evidence mapping. IsoFlow AI scans your policies and maps them to ISO 27001 Annex A controls instantly.">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.19.3/inter.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
-        .hero-pattern {
-            background-color: #000000;
-            background-image: radial-gradient(#1a1a1a 1px, transparent 1px);
-            background-size: 30px 30px;
+        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f8fafc; }
+        .gradient-text {
+            background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        .glow {
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        /* Video Container for Responsive 16:9 */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
-<body class="bg-black text-white antialiased">
+<body class="antialiased selection:bg-blue-500 selection:text-white">
 
-    <nav class="border-b border-gray-800 bg-black/50 backdrop-blur-md fixed w-full z-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
-                <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-shield-halved text-blue-500 text-xl"></i>
-                    <span class="text-xl font-bold tracking-tight">IsoFlow<span class="text-blue-500">AI</span></span>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#features" class="text-sm text-gray-400 hover:text-white transition">Features</a>
-                    <a href="#how-it-works" class="text-sm text-gray-400 hover:text-white transition">How it Works</a>
-                    <a href="https://rohanadat.gumroad.com/l/isoflow-pilot" class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-semibold transition">
-                        Get Pilot Access
-                    </a>
-                </div>
+    <nav class="fixed w-full z-50 glass-panel border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <i data-lucide="shield-check" class="text-blue-500 w-6 h-6"></i>
+                <span class="font-bold text-xl tracking-tight">IsoFlow<span class="text-blue-500">AI</span></span>
             </div>
+            <a href="https://rohanadat.gumroad.com/l/isoflow-pilot" 
+               class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2 rounded-lg font-medium transition-all text-sm">
+                Get Pilot Access
+            </a>
         </div>
     </nav>
 
-    <div class="relative pt-32 pb-20 sm:pt-40 sm:pb-24 hero-pattern">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-900/30 border border-blue-800 text-blue-400 text-xs font-semibold mb-6">
-                <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
-                Q1 PILOT PROGRAM OPEN
-            </div>
+    <section class="pt-32 pb-20 relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-blue-600/20 blur-[120px] rounded-full pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
             
-            <h1 class="text-5xl sm:text-6xl font-bold tracking-tight mb-6 leading-tight">
-                Map Audit Evidence <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">in Seconds, Not Hours.</span>
-            </h1>
-            
-            <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">
-                Stop manually linking screenshots to Excel rows. IsoFlow uses AI to analyze your PDF evidence and map it to ISO 27001 controls automatically.
-            </p>
-
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="https://rohanadat.gumroad.com/l/isoflow-pilot" class="w-full sm:w-auto bg-white text-black hover:bg-gray-100 px-8 py-4 rounded-xl font-bold text-lg transition flex items-center justify-center gap-2 glow">
-                    <i class="fa-solid fa-bolt"></i> Join Pilot - $149
-                </a>
-                <p class="text-xs text-gray-500 mt-2 sm:mt-0">
-                    <i class="fa-solid fa-lock"></i> 30-Day Money Back Guarantee
+            <div class="space-y-8">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold uppercase tracking-wide">
+                    <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                    Q1 Pilot Program Open
+                </div>
+                
+                <h1 class="text-5xl lg:text-6xl font-bold leading-tight">
+                    Audit Evidence, <br>
+                    <span class="gradient-text">Mapped Instantly.</span>
+                </h1>
+                
+                <p class="text-lg text-slate-400 leading-relaxed max-w-xl">
+                    Stop manually mapping PDF policies to Annex A controls. 
+                    IsoFlow AI scans your evidence, identifies the gaps, and maps it to 
+                    <strong>ISO 27001:2022</strong> standards in seconds.
                 </p>
-            </div>
-        </div>
-    </div>
 
-    <div id="features" class="py-24 bg-gray-900/50 border-y border-gray-800">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6">
-                    <h2 class="text-3xl font-bold">The Manual Audit Nightmare</h2>
-                    <div class="space-y-4">
-                        <div class="flex items-start gap-4 p-4 rounded-lg bg-red-900/10 border border-red-900/30">
-                            <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
-                            <div>
-                                <h3 class="font-semibold text-red-400">Wasted Billable Hours</h3>
-                                <p class="text-sm text-gray-400">Spending 5+ hours copy-pasting filenames into Excel trackers.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4 p-4 rounded-lg bg-red-900/10 border border-red-900/30">
-                            <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
-                            <div>
-                                <h3 class="font-semibold text-red-400">Human Error Risk</h3>
-                                <p class="text-sm text-gray-400">Missing a control mapping creates findings and delays certification.</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <a href="https://rohanadat.gumroad.com/l/isoflow-pilot" 
+                       class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all flex items-center justify-center gap-2 shadow-lg shadow-blue-900/20">
+                        Join the Pilot ($149)
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#demo" class="px-8 py-4 rounded-xl font-medium text-slate-300 hover:text-white border border-white/10 hover:border-white/20 transition-all flex items-center justify-center gap-2">
+                        <i data-lucide="play-circle" class="w-5 h-5"></i>
+                        Watch Demo
+                    </a>
                 </div>
-
-                <div class="space-y-6">
-                    <h2 class="text-3xl font-bold text-blue-400">The IsoFlow Advantage</h2>
-                    <div class="space-y-4">
-                        <div class="flex items-start gap-4 p-4 rounded-lg bg-blue-900/10 border border-blue-900/30">
-                            <i class="fa-solid fa-check text-blue-500 mt-1"></i>
-                            <div>
-                                <h3 class="font-semibold text-blue-400">Instant Analysis</h3>
-                                <p class="text-sm text-gray-400">Upload a PDF. The AI reads the text, identifies the context, and suggests the Control ID.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4 p-4 rounded-lg bg-blue-900/10 border border-blue-900/30">
-                            <i class="fa-solid fa-check text-blue-500 mt-1"></i>
-                            <div>
-                                <h3 class="font-semibold text-blue-400">Zero Data Retention</h3>
-                                <p class="text-sm text-gray-400">We process your file in RAM and discard it immediately. Zero storage. Total privacy.</p>
-                            </div>
-                        </div>
+                
+                <div class="flex items-center gap-4 text-sm text-slate-500 pt-4">
+                    <div class="flex -space-x-2">
+                        <div class="w-8 h-8 rounded-full bg-slate-700 border-2 border-[#0f172a]"></div>
+                        <div class="w-8 h-8 rounded-full bg-slate-600 border-2 border-[#0f172a]"></div>
+                        <div class="w-8 h-8 rounded-full bg-slate-500 border-2 border-[#0f172a]"></div>
                     </div>
+                    <p>Limited spots for Q1 Pilot cohort.</p>
+                </div>
+            </div>
+
+            <div id="demo" class="relative group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
+                <div class="video-wrapper bg-slate-900">
+                    <iframe 
+                        src="https://www.youtube.com/embed/bkts3QJbfN8?rel=0&modestbranding=1&autohide=1&showinfo=0" 
+                        title="IsoFlow Demo"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div id="how-it-works" class="py-24">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-            <h2 class="text-3xl font-bold mb-12">How it Works</h2>
+    <section class="py-24 bg-slate-900/50 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Why Auditors Love IsoFlow</h2>
+                <p class="text-slate-400">Built for speed. Designed for compliance.</p>
+            </div>
+
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-6 rounded-2xl bg-gray-900 border border-gray-800 hover:border-blue-500/50 transition">
-                    <div class="w-12 h-12 bg-blue-900/30 rounded-lg flex items-center justify-center mx-auto mb-4 text-blue-400 font-bold text-xl">1</div>
-                    <h3 class="font-semibold mb-2">Upload Evidence</h3>
-                    <p class="text-sm text-gray-400">Drag & Drop your policy PDF or screenshot.</p>
+                <div class="glass-panel p-8 rounded-2xl hover:border-blue-500/30 transition-all">
+                    <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="file-check" class="text-blue-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Instant Mapping</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Drag & Drop any policy PDF. The AI extracts the text and maps it directly to the relevant Annex A control ID (e.g., A.5.17).
+                    </p>
                 </div>
-                <div class="p-6 rounded-2xl bg-gray-900 border border-gray-800 hover:border-blue-500/50 transition">
-                    <div class="w-12 h-12 bg-blue-900/30 rounded-lg flex items-center justify-center mx-auto mb-4 text-blue-400 font-bold text-xl">2</div>
-                    <h3 class="font-semibold mb-2">AI Processing</h3>
-                    <p class="text-sm text-gray-400">IsoFlow scans the content against ISO 27001:2022 standards.</p>
+
+                <div class="glass-panel p-8 rounded-2xl hover:border-blue-500/30 transition-all">
+                    <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="zap" class="text-purple-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Gap Analysis</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        It doesn't just check the box. It reads the content and tells you if your policy is missing key requirements like "Password Rotation".
+                    </p>
                 </div>
-                <div class="p-6 rounded-2xl bg-gray-900 border border-gray-800 hover:border-blue-500/50 transition">
-                    <div class="w-12 h-12 bg-blue-900/30 rounded-lg flex items-center justify-center mx-auto mb-4 text-blue-400 font-bold text-xl">3</div>
-                    <h3 class="font-semibold mb-2">Get Results</h3>
-                    <p class="text-sm text-gray-400">Receive the Control ID and Compliance Status instantly.</p>
+
+                <div class="glass-panel p-8 rounded-2xl hover:border-blue-500/30 transition-all">
+                    <div class="w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="lock" class="text-green-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Private & Secure</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Your data is processed securely. We don't train our models on your confidential audit evidence.
+                    </p>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="py-24 border-t border-gray-800">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
-            <h2 class="text-3xl font-bold mb-6">Ready to automate your audit?</h2>
-            <p class="text-gray-400 mb-8">Join the Q1 Pilot Program today. One-time payment. Lifetime access to the pilot build.</p>
-            <a href="https://rohanadat.gumroad.com/l/isoflow-pilot" class="inline-block bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-xl font-bold text-lg transition shadow-lg shadow-blue-900/20">
-                Get Access Now - $149
-            </a>
-            <p class="text-xs text-gray-500 mt-4">
-                Secure payment via Gumroad • 100% Money-Back Guarantee
+    <section class="py-24 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-6">Ready to automate your audit?</h2>
+            <p class="text-xl text-slate-400 mb-12">
+                Join the Q1 Pilot. Get 3 months of full access for a single flat fee.
+                <br>No recurring subscriptions.
             </p>
-        </div>
-    </div>
+            
+            <div class="glass-panel p-10 rounded-3xl border border-blue-500/30 max-w-lg mx-auto relative">
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-bold tracking-wide">
+                    PILOT OFFER
+                </div>
+                
+                <div class="text-5xl font-bold mb-2">$149</div>
+                <div class="text-slate-400 mb-8">One-time payment • 3 Months Access</div>
+                
+                <ul class="text-left space-y-4 mb-8 text-slate-300 max-w-xs mx-auto">
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="check-circle" class="text-blue-500 w-5 h-5"></i> Unlimited PDF Scans
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="check-circle" class="text-blue-500 w-5 h-5"></i> ISO 27001:2022 Mapping
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="check-circle" class="text-blue-500 w-5 h-5"></i> Priority Support
+                    </li>
+                </ul>
 
-    <footer class="py-8 border-t border-gray-900 text-center text-gray-500 text-sm">
-        <p>&copy; 2026 IsoFlow AI. All rights reserved.</p>
+                <a href="https://rohanadat.gumroad.com/l/isoflow-pilot" 
+                   class="block w-full bg-blue-600 hover:bg-blue-500 text-white py-4 rounded-xl font-bold text-lg transition-all">
+                    Get Instant Access
+                </a>
+                <p class="text-xs text-slate-500 mt-4">Secure payment via Gumroad. 100% Money-back guarantee.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-white/5 text-center text-slate-600">
+        <p>&copy; 2026 IsoFlow AI. Pune, India. All rights reserved.</p>
     </footer>
 
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
