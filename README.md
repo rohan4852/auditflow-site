@@ -1,20 +1,16 @@
-# IsoFlow Systems - Landing Page
+# IsoFlow Systems - Web Infrastructure
 
-Static landing page for IsoFlow Systems, built with plain HTML, Tailwind CSS via CDN, and Lucide Icons.
+Static landing page and central link repository for IsoFlow Systems. Built with plain HTML, Tailwind CSS (via CDN), and Lucide Icons.
 
-## Architecture & Rebrand Notes
-- Removed Gumroad integration to shift towards an Enterprise/Pilot B2B sales motion.
-- Re-positioned from an "AI Wrapper" to a "Stateless Audit Utility."
-- Emphasizes data privacy (RAM-only execution, TLS 1.3).
+## Positioning & Rebrand Notes
+- **Identity:** Stateless Evidence Engine for SOC 2 & ISO 27001 Consultants.
+- **Sales Motion:** Enterprise Pilot (Manual invoicing via Stripe, no Gumroad).
+- **Core Value:** Data privacy (RAM-only execution) and strictly formatted JSON/Excel orchestration (No LLM hallucination).
 
-## Development
-No build step is required. Simply open `index.html` in your browser.
+## External Trust Assets (Update These Links)
+Since we use a "Lean Enterprise" stack, our heavy documentation is hosted externally. Keep track of your live links here:
 
-## Deployment
-Hosted statically via GitHub Pages / Vercel / Netlify.
-Custom Domain configured via `CNAME` record to `isoflowai.in`.
-
-## Next Steps for Founder:
-1. Update the `YOUR_PROFILE` text in the `index.html` footer with your actual LinkedIn URL.
-2. Link the "System Status" text in the footer to a free UptimeRobot public page.
-3. If using a Typeform/Tally form instead of email, replace the `mailto:rohan@isoflowai.in` links in the buttons with your form URL.
+* **System Status:** `[Insert your UptimeRobot Public Page Link here]`
+* **Architecture , Security Specs & JSON Output Schema::** `https://docs.google.com/document/d/1hdzC_SRj0Qwd3krMlBi2rMSnLa6kJGBRcl58mD8mtfg/edit?usp=sharing`
+* **Privacy & Terms:** `https://docs.google.com/document/d/1_FqxE0iuFCAFh5rtdFSguPC2oaNiXPDJP95m8Dee7vA/edit?usp=sharing`
+* **Founder LinkedIn:** `https://www.linkedin.com/in/rohanadat/`
