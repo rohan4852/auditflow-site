@@ -242,12 +242,18 @@
         </div>
     </footer>
 
-    <script>
+   <script>
         function openIsoFlowPopup() {
             Tally.openPopup('eq60NO', {
                 layout: 'modal', 
-                width: 700, 
-                autoClose: 3000 // Closes the popup 3 seconds after form was submitted
+                width: 700,
+                onSubmit: (payload) => {
+                    // 1. Instantly close the buggy Tally popup
+                    Tally.closePopup('eq60NO');
+                    
+                    // 2. Show a native success message on your site
+                    alert("Request Received! Thanks for requesting early access. I will be in touch shortly.");
+                }
             });
         }
     </script>
