@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.19.3/inter.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script async src="https://tally.so/widgets/embed.js"></script>
 
     <style>
         body { 
@@ -55,12 +56,13 @@
                 <a href="#security" class="hover:text-white transition-colors">Security Specs</a>
                 <a href="https://immense-bestseller-182.notion.site/IsoFlow-API-Reference-v1-30dec433f430800c847bd67d943d1454?source=copy_link" target="_blank" class="hover:text-white transition-colors">API Docs</a>
                 <a href="https://stats.uptimerobot.com/Uc7loBFQeL" target="_blank" class="flex items-center gap-2 hover:opacity-80 transition-opacity bg-emerald-950/30 px-3 py-1.5 rounded-full border border-emerald-900/50">
-    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-    <span class="text-emerald-500 font-mono text-xs font-semibold">API: Operational</span>
-</a>
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span class="text-emerald-500 font-mono text-xs font-semibold">API: Operational</span>
+                </a>
             </div>
         </div>
     </nav>
+
     <section class="pt-32 pb-16 relative">
         <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
             
@@ -79,14 +81,15 @@
                 </p>
 
                 <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                    <a href="https://tally.so/r/eq60NO" target="_blank"
+                    <button onclick="openIsoFlowPopup()"
                        class="bg-white hover:bg-slate-200 text-black px-8 py-4 rounded-md font-semibold text-sm transition-all flex items-center justify-center gap-2">
                         Request Pilot Access
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
+                    </button>
+                    
                     <a href="#how-it-works" class="px-8 py-4 rounded-md font-medium text-neutral-400 hover:text-white glass-panel transition-all flex items-center justify-center gap-2 text-sm">
                        <i data-lucide="git-merge" class="w-4 h-4"></i>
-                        View Architecture
+                       View Architecture
                     </a>
                 </div>
                 
@@ -176,6 +179,7 @@
             </div>
         </div>
     </section>
+
     <section class="py-16 bg-[#0f0f0f] border-t border-white/5">
         <div class="max-w-3xl mx-auto px-6 text-center md:text-left flex flex-col md:flex-row items-center gap-8">
             <div class="w-24 h-24 rounded-full bg-slate-800 border-2 border-slate-600 overflow-hidden shrink-0">
@@ -193,6 +197,7 @@
             </div>
         </div>
     </section>
+
     <footer class="border-t border-white/10 bg-[#050505] pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-12 mb-12">
@@ -237,6 +242,16 @@
         </div>
     </footer>
 
+    <script>
+        function openIsoFlowPopup() {
+            Tally.openPopup('eq60NO', {
+                layout: 'modal', 
+                width: 700, 
+                autoClose: 3000 // Closes the popup 3 seconds after form was submitted
+            });
+        }
+    </script>
+    
     <script>
         lucide.createIcons();
     </script>
