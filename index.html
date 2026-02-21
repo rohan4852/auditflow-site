@@ -41,6 +41,22 @@
             width: 100%;
             height: 100%;
         }
+        .diagram-line {
+            position: relative;
+        }
+        .diagram-line::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -24px;
+            width: 24px;
+            height: 2px;
+            background: #333;
+            z-index: -1;
+        }
+        @media (max-width: 768px) {
+            .diagram-line::after { display: none; }
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-slate-600 selection:text-white">
@@ -52,10 +68,11 @@
                 <span class="font-bold text-lg tracking-tight text-white">IsoFlow Systems</span>
             </div>
             <div class="hidden md:flex items-center gap-6 text-sm font-medium text-neutral-400">
+                <a href="#product" class="hover:text-white transition-colors">Interface</a>
                 <a href="#how-it-works" class="hover:text-white transition-colors">Architecture</a>
                 <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
                 <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
-                <a href="https://immense-bestseller-182.notion.site/IsoFlow-API-Reference-v1-30dec433f430800c847bd67d943d1454?source=copy_link" target="_blank" class="hover:text-white transition-colors">API Docs</a>
+                <a href="/security.html" class="hover:text-white transition-colors">Security Specs</a>
                 <a href="https://stats.uptimerobot.com/Uc7loBFQeL" target="_blank" class="flex items-center gap-2 hover:opacity-80 transition-opacity bg-emerald-950/30 px-3 py-1.5 rounded-full border border-emerald-900/50">
                     <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                     <span class="text-emerald-500 font-mono text-xs font-semibold">API: Operational</span>
@@ -66,7 +83,6 @@
 
     <section class="pt-32 pb-16 relative">
         <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-            
             <div class="space-y-8">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-sm glass-panel text-slate-300 text-xs font-mono uppercase tracking-wide border-emerald-500/30">
                     <i data-lucide="shield" class="w-3 h-3 text-emerald-500"></i>
@@ -82,16 +98,25 @@
                 </p>
 
                 <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <button onclick="openIsoFlowPopup()"
+                       class="bg-white hover:bg-slate-200 text-black px-8 py-4 rounded-md font-semibold text-sm transition-all flex items-center justify-center gap-2">
+                        Launch Secure Workspace
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
                     
-                    <a href="IsoFlow_Automated_Mapping_QAA_Sample.xlsx" download class="px-8 py-4 rounded-md font-medium text-emerald-400 border border-emerald-500/30 hover:bg-emerald-900/20 glass-panel transition-all flex items-center justify-center gap-2 text-sm">
+                    <a href="#sample-report" download class="px-8 py-4 rounded-md font-medium text-emerald-400 border border-emerald-500/30 hover:bg-emerald-900/20 glass-panel transition-all flex items-center justify-center gap-2 text-sm">
                        <i data-lucide="download" class="w-4 h-4"></i>
                        Download Sample Output
                     </a>
                 </div>
                 
-                <div class="flex items-center gap-3 text-xs font-mono text-neutral-500 pt-2">
-                    <i data-lucide="cpu" class="w-4 h-4"></i>
-                    <p>100% RAM-only processing. Zero database storage.</p>
+                <div class="flex items-center gap-3 text-xs font-medium text-slate-300 pt-2 border-t border-white/10 mt-6 inline-block">
+                    <div class="flex -space-x-2 mr-2">
+                        <div class="w-6 h-6 rounded-full bg-slate-700 border border-slate-900"></div>
+                        <div class="w-6 h-6 rounded-full bg-slate-600 border border-slate-900"></div>
+                        <div class="w-6 h-6 rounded-full bg-slate-500 border border-slate-900"></div>
+                    </div>
+                    Trusted by 7+ ISO consultants across the UK and India
                 </div>
             </div>
 
@@ -111,7 +136,16 @@
         </div>
     </section>
 
-    <section class="border-y border-white/5 bg-[#0f0f0f] py-8">
+    <section class="py-12 bg-emerald-950/10 border-y border-emerald-900/30">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <i data-lucide="quote" class="w-8 h-8 text-emerald-500/50 mx-auto mb-4"></i>
+            <p class="text-xl md:text-2xl font-medium text-slate-200 italic mb-6">"This engine completely eliminated our manual spreadsheet work. IsoFlow easily saved us 6+ hours per audit mapping with 100% exact verbatim quotes."</p>
+            <div class="text-sm font-semibold text-white">Lead ISO Consultant</div>
+            <div class="text-xs text-neutral-500">Cybersecurity Firm, United Kingdom</div>
+        </div>
+    </section>
+
+    <section class="border-b border-white/5 bg-[#0f0f0f] py-8">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-white/10">
             <div class="p-4">
                 <h3 class="text-3xl font-bold text-white mb-1">90%</h3>
@@ -128,11 +162,46 @@
         </div>
     </section>
 
-    <section id="security" class="py-20 border-b border-white/5 bg-[#0a0a0a]">
+    <section id="product" class="py-24 bg-[#050505]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4 text-white tracking-tight">Audit Evidence, Mapped Instantly</h2>
+                <p class="text-neutral-500">Visually verify exactly what the orchestration layer produces.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-panel p-4 rounded-xl">
+                    <div class="aspect-[4/3] bg-slate-900 rounded-lg mb-4 border border-white/5 overflow-hidden">
+                        <img src="ui-upload.jpg" alt="Upload Interface" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity" onerror="this.src='https://placehold.co/600x450/0f0f0f/333?text=Upload+Interface'">
+                    </div>
+                    <h4 class="text-white font-semibold mb-2">1. Secure Document Upload</h4>
+                    <p class="text-xs text-neutral-400">Drag and drop raw PDFs or Word documents into the ephemeral processing queue.</p>
+                </div>
+                
+                <div class="glass-panel p-4 rounded-xl">
+                    <div class="aspect-[4/3] bg-slate-900 rounded-lg mb-4 border border-white/5 overflow-hidden">
+                        <img src="ui-mapping.jpg" alt="Mapping Interface" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity" onerror="this.src='https://placehold.co/600x450/0f0f0f/333?text=Live+Mapping+Output'">
+                    </div>
+                    <h4 class="text-white font-semibold mb-2">2. Live Control Mapping</h4>
+                    <p class="text-xs text-neutral-400">The engine cross-references custom matrices, extracting exact text citations in seconds.</p>
+                </div>
+
+                <div class="glass-panel p-4 rounded-xl border-emerald-500/30 shadow-[0_0_30px_rgba(16,185,129,0.1)]">
+                    <div class="aspect-[4/3] bg-slate-900 rounded-lg mb-4 border border-white/5 overflow-hidden relative">
+                        <img src="ui-export.jpg" alt="Excel Output" class="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity" onerror="this.src='https://placehold.co/600x450/0f0f0f/10b981?text=Excel+Audit+Trail'">
+                    </div>
+                    <h4 class="text-white font-semibold mb-2">3. Formatted Excel Export</h4>
+                    <p class="text-xs text-neutral-400">Download the finalized, color-coded audit trail ready for direct client submission.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="security" class="py-20 border-y border-white/5 bg-[#0a0a0a]">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-12">
                 <h2 class="text-2xl font-bold text-white mb-2">Enterprise Security Posture</h2>
-                <p class="text-sm text-emerald-500 font-mono">Infrastructure built on SOC 2 Type II / ISO 27001 certified AWS/GCP endpoints. IsoFlow SOC 2 compliance in progress.</p>
+                <p class="text-sm text-emerald-500 font-mono">Infrastructure built on SOC 2 Type II / ISO 27001 certified Google Cloud endpoints.</p>
             </div>
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="glass-panel p-8 rounded-lg">
@@ -187,7 +256,7 @@
                             <tr>
                                 <td class="p-4 font-mono text-xs">Cost (Per Client)</td>
                                 <td class="p-4">$150+/hr billable time</td>
-                                <td class="p-4 text-white font-semibold">Included in flat subscription</td>
+                                <td class="p-4 text-white font-semibold">Included in flat setup</td>
                             </tr>
                             <tr>
                                 <td class="p-4 font-mono text-xs">Output Format</td>
@@ -228,14 +297,45 @@
         </div>
     </section>
 
-    <section id="how-it-works" class="py-20 border-y border-white/5 bg-[#0a0a0a]">
-        <div class="max-w-5xl mx-auto px-6">
+    <section id="how-it-works" class="py-24 border-y border-white/5 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-4 text-white tracking-tight">How the Orchestration Works</h2>
+                <h2 class="text-3xl font-bold mb-4 text-white tracking-tight">Zero-Retention Infrastructure</h2>
                 <p class="text-neutral-500">A strict 3-step pipeline to prevent hallucination and guarantee compliance formatting.</p>
             </div>
 
-            <div class="space-y-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 relative z-10 mb-16">
+                <div class="glass-panel p-6 rounded-lg text-center w-full md:w-1/4 diagram-line">
+                    <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4 border border-slate-600">
+                        <i data-lucide="user" class="w-5 h-5 text-slate-300"></i>
+                    </div>
+                    <h4 class="text-sm font-bold text-white mb-1">User Upload</h4>
+                    <p class="text-xs text-neutral-500">Raw Policy PDFs</p>
+                </div>
+                <div class="glass-panel p-6 rounded-lg text-center w-full md:w-1/4 diagram-line">
+                    <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4 border border-slate-600">
+                        <i data-lucide="lock" class="w-5 h-5 text-slate-300"></i>
+                    </div>
+                    <h4 class="text-sm font-bold text-white mb-1">TLS 1.3 Transit</h4>
+                    <p class="text-xs text-neutral-500">Encrypted in motion</p>
+                </div>
+                <div class="glass-panel p-6 rounded-lg text-center w-full md:w-1/4 diagram-line border-emerald-500/30 shadow-[0_0_20px_rgba(16,185,129,0.05)]">
+                    <div class="w-12 h-12 bg-emerald-900/30 rounded-full flex items-center justify-center mx-auto mb-4 border border-emerald-500/50">
+                        <i data-lucide="cpu" class="w-5 h-5 text-emerald-400"></i>
+                    </div>
+                    <h4 class="text-sm font-bold text-white mb-1">Ephemeral Compute</h4>
+                    <p class="text-xs text-neutral-500">RAM-only mapping on GCP</p>
+                </div>
+                <div class="glass-panel p-6 rounded-lg text-center w-full md:w-1/4">
+                    <div class="w-12 h-12 bg-red-900/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-red-500/30">
+                        <i data-lucide="trash-2" class="w-5 h-5 text-red-400"></i>
+                    </div>
+                    <h4 class="text-sm font-bold text-white mb-1">Export & Wipe</h4>
+                    <p class="text-xs text-neutral-500">Session destroyed instantly</p>
+                </div>
+            </div>
+
+            <div class="space-y-6 max-w-5xl mx-auto">
                 <div class="glass-panel p-6 rounded-lg flex flex-col md:flex-row items-start gap-6 border-l-4 border-l-slate-400">
                     <div class="bg-slate-800 text-white font-mono text-sm px-3 py-1 rounded">01</div>
                     <div>
@@ -243,7 +343,6 @@
                         <p class="text-sm text-neutral-400">Drop your raw PDF/Word policies into the engine. The local pre-processor automatically handles messy tables, headers, and footers that break standard LLMs.</p>
                     </div>
                 </div>
-
                 <div class="glass-panel p-6 rounded-lg flex flex-col md:flex-row items-start gap-6 border-l-4 border-l-slate-600">
                     <div class="bg-slate-800 text-white font-mono text-sm px-3 py-1 rounded">02</div>
                     <div>
@@ -251,7 +350,6 @@
                         <p class="text-sm text-neutral-400">The orchestration layer cross-references your text against exact SOC 2 criteria or ISO 27001 Annex A controls, forcing the output into a strict JSON schema.</p>
                     </div>
                 </div>
-
                 <div class="glass-panel p-6 rounded-lg flex flex-col md:flex-row items-start gap-6 border-l-4 border-l-slate-800">
                     <div class="bg-slate-800 text-white font-mono text-sm px-3 py-1 rounded">03</div>
                     <div>
@@ -264,46 +362,56 @@
     </section>
 
     <section id="pricing" class="py-24 bg-[#050505]">
-        <div class="max-w-3xl mx-auto px-6">
+        <div class="max-w-5xl mx-auto px-6">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-white mb-4">Simple, Transparent Pricing</h2>
-                <p class="text-neutral-500">Stop paying per-hour for manual work. Start automating today.</p>
+                <h2 class="text-3xl font-bold text-white mb-4">Launch Your Secure Workspace</h2>
+                <p class="text-neutral-500">Instant access. No manual sales calls or approvals.</p>
             </div>
 
-            <div class="glass-panel rounded-2xl p-8 relative overflow-hidden border-emerald-500/20">
-                <div class="absolute top-0 right-0 bg-emerald-500 text-black text-xs font-bold px-3 py-1 rounded-bl-lg">EARLY ACCESS</div>
-                <h3 class="text-2xl font-bold text-white mb-2">Concierge Pilot Access</h3>
-                <div class="flex items-end gap-2 mb-6">
-                    <span class="text-5xl font-extrabold text-white">$149</span>
-                    <span class="text-neutral-500 mb-1">/ one-time setup</span>
+            <div class="grid md:grid-cols-5 gap-8 items-center">
+                <div class="md:col-span-3 glass-panel rounded-2xl p-8 relative overflow-hidden border-emerald-500/30 shadow-2xl shadow-emerald-900/10">
+                    <div class="absolute top-0 right-0 bg-emerald-500 text-black text-xs font-bold px-3 py-1 rounded-bl-lg">LIMITED PILOT</div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Early Access Program</h3>
+                    <div class="flex items-end gap-2 mb-6">
+                        <span class="text-5xl font-extrabold text-white">$149</span>
+                        <span class="text-neutral-500 mb-1">/ one-time setup</span>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-sm text-slate-300">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500"></i>
+                            <strong>30 Days Unlimited Mapping</strong> (No audit limits)
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-slate-300">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500"></i>
+                            <strong>Up to 3 User Seats</strong> for your compliance team
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-slate-300">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500"></i>
+                            Custom SOC 1 & SOC 2 CSV matrix ingestion
+                        </li>
+                    </ul>
+
+                    <button onclick="openIsoFlowPopup()" class="w-full bg-emerald-500 text-black py-4 rounded-lg font-bold hover:bg-emerald-400 transition-colors shadow-lg shadow-emerald-500/20">
+                        Launch Secure Workspace
+                    </button>
                 </div>
-                
-                <p class="text-sm text-neutral-400 mb-8 pb-8 border-b border-white/10">
-                    Gain exclusive access to the IsoFlow Engine during our early access period. Price transitions to a standard $39/user/mo subscription after 30 days.
-                </p>
 
-                <ul class="space-y-4 mb-8">
-                    <li class="flex items-center gap-3 text-sm text-slate-300">
-                        <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500"></i>
-                        <strong>30 Days Unlimited Mapping</strong> (No audit limits)
-                    </li>
-                    <li class="flex items-center gap-3 text-sm text-slate-300">
-                        <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500"></i>
-                        <strong>Up to 3 User Seats</strong> for your compliance team
-                    </li>
-                    <li class="flex items-center gap-3 text-sm text-slate-300">
-                        <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500"></i>
-                        Custom SOC 1 & SOC 2 CSV matrix ingestion
-                    </li>
-                    <li class="flex items-center gap-3 text-sm text-slate-300">
-                        <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500"></i>
-                        Direct Slack/Email support with the Founder
-                    </li>
-                </ul>
-
-                <button onclick="openIsoFlowPopup()" class="w-full bg-white text-black py-4 rounded-lg font-bold hover:bg-slate-200 transition-colors">
-                    Request Pilot Invite
-                </button>
+                <div class="md:col-span-2 space-y-6 bg-[#0f0f0f] p-6 rounded-xl border border-white/5">
+                    <h4 class="text-lg font-bold text-white border-b border-white/10 pb-2">What happens next?</h4>
+                    <div class="flex gap-4 items-start">
+                        <div class="bg-slate-800 text-white font-mono text-xs px-2 py-1 rounded mt-0.5">1</div>
+                        <p class="text-sm text-neutral-400">Complete the secure checkout via Tally & Stripe.</p>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="bg-slate-800 text-white font-mono text-xs px-2 py-1 rounded mt-0.5">2</div>
+                        <p class="text-sm text-neutral-400">Your dedicated, isolated ephemeral workspace is provisioned instantly.</p>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="bg-slate-800 text-white font-mono text-xs px-2 py-1 rounded mt-0.5">3</div>
+                        <p class="text-sm text-neutral-400">Log in immediately and upload your first policy PDF.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -314,7 +422,7 @@
             <div class="grid md:grid-cols-2 gap-6">
                 <div class="glass-panel p-6 rounded-lg">
                     <h4 class="text-white font-semibold mb-2 text-sm">Where is my data processed?</h4>
-                    <p class="text-neutral-400 text-xs leading-relaxed">All document processing occurs entirely in volatile RAM on AWS/GCP cloud environments. The moment your Excel report is generated, the session is terminated and all memory is purged.</p>
+                    <p class="text-neutral-400 text-xs leading-relaxed">All document processing occurs entirely in volatile RAM on Google Cloud (GCP) environments. The moment your Excel report is generated, the session is terminated and all memory is purged.</p>
                 </div>
                 <div class="glass-panel p-6 rounded-lg">
                     <h4 class="text-white font-semibold mb-2 text-sm">Which LLM models do you use?</h4>
@@ -333,18 +441,19 @@
     </section>
 
     <section class="py-16 bg-[#0f0f0f] border-t border-white/5">
-        <div class="max-w-3xl mx-auto px-6 text-center md:text-left flex flex-col md:flex-row items-center gap-8">
-            <div class="w-24 h-24 rounded-full bg-slate-800 border-2 border-slate-600 overflow-hidden shrink-0">
-                <img src="1737048336918.jpg" alt="Rohan" class="w-full h-full object-cover">
+        <div class="max-w-4xl mx-auto px-6 text-center md:text-left flex flex-col md:flex-row items-center gap-8">
+            <div class="w-32 h-32 rounded-full bg-slate-800 border-2 border-slate-600 overflow-hidden shrink-0">
+                <img src="1737048336918.jpg" alt="Rohan Adat" class="w-full h-full object-cover">
             </div>
             <div>
                 <div class="inline-block px-3 py-1 rounded-sm bg-slate-800 text-slate-300 text-xs font-mono mb-3">Lead Engineer & Founder</div>
-                <h3 class="text-2xl font-bold text-white mb-2">Built by Rohan.</h3>
+                <h3 class="text-2xl font-bold text-white mb-1">Rohan Adat</h3>
+                <p class="text-emerald-500 text-sm font-mono mb-4">Full Stack Engineer specializing in compliance automation</p>
                 <p class="text-sm text-neutral-400 leading-relaxed mb-4">
-                    I got tired of watching compliance teams waste thousands of billable hours manually mapping PDFs to spreadsheets. I built IsoFlow to be the exact stateless utility I wished I had—fast, strictly formatted, and paranoid about data privacy.
+                    Prior to IsoFlow, I built highly secure enterprise backend systems using Spring Boot and distributed architectures. I got tired of watching compliance teams waste thousands of billable hours manually mapping PDFs to spreadsheets. I built this engine to be the exact stateless utility I wished existed—fast, strictly formatted, and paranoid about data privacy.
                 </p>
                 <a href="https://www.linkedin.com/in/rohanadat/" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 flex items-center justify-center md:justify-start gap-1">
-                    <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn
+                    <i data-lucide="linkedin" class="w-4 h-4"></i> View LinkedIn Profile
                 </a>
             </div>
         </div>
@@ -373,16 +482,17 @@
                     <div>
                         <h4 class="text-white font-semibold mb-4">Infrastructure</h4>
                         <ul class="space-y-2 text-neutral-500">
-                            <li><a href="https://stats.uptimerobot.com/Uc7loBFQeL" class="hover:text-white transition-colors flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-emerald-500"></div> System Status</a></li>
-                            <li><a href="https://immense-bestseller-182.notion.site/IsoFlow-API-Reference-v1-30dec433f430800c847bd67d943d1454?source=copy_link" target="_blank" class="hover:text-white transition-colors">API Documentation</a></li>
-                            <li><a href="https://immense-bestseller-182.notion.site/IsoFlow-Systems-Architecture-Security-Specs-30dec433f43080bca0a1ef5b46573e98?source=copy_link">Security Architecture & JSON Output Schema</a></li>
+                            <li><a href="https://stats.uptimerobot.com/Uc7loBFQeL" target="_blank" class="hover:text-white transition-colors flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-emerald-500"></div> System Status</a></li>
+                            <li><a href="/docs.html" class="hover:text-white transition-colors">API Documentation</a></li>
+                            <li><a href="/security.html" class="hover:text-white transition-colors">Security Architecture</a></li>
                         </ul>
                     </div>
                     <div>
                         <h4 class="text-white font-semibold mb-4">Company</h4>
                         <ul class="space-y-2 text-neutral-500">
                             <li><a href="#pricing" class="hover:text-white transition-colors">Pricing & Pilots</a></li>
-                            <li><a href="https://immense-bestseller-182.notion.site/Privacy-Policy-Terms-of-Service-30dec433f43080d68d10ce759b794557?source=copy_link">Privacy Policy & Terms of Service</a></li>
+                            <li><a href="/privacy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                            <li><a href="/terms.html" class="hover:text-white transition-colors">Terms of Service</a></li>
                         </ul>
                     </div>
                 </div>
@@ -390,7 +500,7 @@
 
             <div class="border-t border-white/5 pt-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center text-xs text-neutral-600">
                 <p>&copy; 2026 IsoFlow Systems. Pune, India.</p>
-                <p class="mt-2 md:mt-0 font-mono">v2.1.1-stable</p>
+                <p class="mt-2 md:mt-0 font-mono">v2.3.0-stable</p>
             </div>
         </div>
     </footer>
@@ -414,19 +524,13 @@
                 layout: 'modal', 
                 width: 700,
                 onSubmit: (payload) => {
-                    // 1. Instantly close the blank Tally popup
                     Tally.closePopup('eq60NO');
-                    
-                    // 2. Open our premium native success modal
                     const modal = document.getElementById('success-modal');
                     modal.classList.remove('hidden');
                     modal.classList.add('flex');
                 }
             });
         }
-    </script>
-    
-    <script>
         lucide.createIcons();
     </script>
 </body>
