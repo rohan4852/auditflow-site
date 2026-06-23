@@ -1,14 +1,34 @@
-# IsoFlow Systems - Web Infrastructure
+# IsoFlow Systems - Ephemeral UI Portal
 
-Static landing page and central link repository for IsoFlow Systems. Built with plain HTML, Tailwind CSS (via CDN), and Lucide Icons.
+This repository contains the source code for the frontend user interface of **IsoFlow Systems** (deployed at `isoflowai.in`). Built as a highly performant, security-first web application, this UI layer coordinates user document uploads, framework selection, and real-time mapping status streams while maintaining a strict zero-persistence architecture.
 
-## Positioning & Rebrand Notes
-- **Identity:** Stateless Evidence Engine for SOC 2 & ISO 27001 Consultants.
-- **Sales Motion:** Enterprise Pilot (Manual invoicing ).
-- **Core Value:** Data privacy (RAM-only execution) and strictly formatted JSON/Excel orchestration (No LLM hallucination).
+---
 
-## External Trust Assets (Update These Links)
-Since we use a "Lean Enterprise" stack, our heavy documentation is hosted externally. Keep track of your live links here:
+## 🔒 Security & State Management Architecture
 
-* **System Status:** `stats.uptimerobot.com/Uc7loBFQeL`
-* **Founder LinkedIn:** `https://www.linkedin.com/in/rohanadat/`
+To meet strict enterprise compliance standards, the UI layer operates under a zero-retention data lifecycle:
+* **In-Memory Buffering:** Uploaded policy documents (`.pdf`, `.docx`, `.txt`) and compliance matrices (`.csv`) are held strictly within ephemeral session memory.
+* **Direct Transit:** Data is transmitted securely via TLS 1.3 to the backend processing logic without passing through or spinning up any persistent local storage or intermediary databases.
+* **Instant Session Purge:** The exact moment a user completes their Excel export, closes the browser tab, or terminates the session, all localized states, variable memories, and file streams are completely wiped from RAM.
+
+---
+
+## 🛠️ Tech Stack & Key Features
+
+* **Framework:** Streamlit / Python-based UI ecosystem engineered for rapid execution and low-latency interaction.
+* **File Processing Component:** Highly responsive drag-and-drop file ingestion module configured to handle files up to 200MB.
+* **Dynamic Feedback Interface:** Real-time state indicators and parsing progress tickers that keep users updated during deep LLM cross-referencing.
+* **Design Styling:** Embedded CSS overrides to provide a clean, uncluttered, professional B2B SaaS interface.
+
+---
+
+## ⚙️ Local Development Setup
+
+### 1. Prerequisites
+Ensure you have Python 3.10+ installed on your local environment.
+
+### 2. Installation
+Clone this specific UI repository and navigate into the directory:
+```bash
+git clone [https://github.com/rohan4852/auditflow-site.git](https://github.com/rohan4852/auditflow-site.git)
+cd auditflow-site
