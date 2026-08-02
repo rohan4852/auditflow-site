@@ -19,16 +19,3 @@ To meet strict enterprise compliance standards, the UI layer operates under a ze
 * **File Processing Component:** Highly responsive drag-and-drop file ingestion module configured to handle files up to 200MB.
 * **Dynamic Feedback Interface:** Real-time state indicators and parsing progress tickers that keep users updated during deep LLM cross-referencing.
 * **Design Styling:** Embedded CSS overrides to provide a clean, uncluttered, professional B2B SaaS interface.
-
----
-
-## ⚙️ Local Development Setup
-
-### 1. Prerequisites
-Ensure you have Python 3.10+ installed on your local environment.
-
-### 2. Installation
-Clone this specific UI repository and navigate into the directory:
-```bash
-git clone [https://github.com/rohan4852/auditflow-site.git](https://github.com/rohan4852/auditflow-site.git)
-cd auditflow-site
