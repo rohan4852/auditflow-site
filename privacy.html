@@ -1,84 +1,539 @@
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Privacy Policy | IsoFlow Systems</title>
+    <meta name="description" content="Learn how IsoFlow Systems uses and protects information submitted through its website, document-processing service, and business and practitioner forms.">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.19.3/inter.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #050505; color: #d4d4d4; }
-        .glass-panel { background: #0f0f0f; border: 1px solid #262626; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #050505;
+            color: #d4d4d4;
+        }
+
+        .glass-panel {
+            background: #0f0f0f;
+            border: 1px solid #262626;
+        }
+
+        a:focus-visible {
+            outline: 2px solid #34d399;
+            outline-offset: 3px;
+            border-radius: 3px;
+        }
     </style>
 </head>
+
 <body class="antialiased selection:bg-slate-600 selection:text-white">
 
-    <nav class="fixed w-full z-50 glass-panel border-b border-white/10">
+    <nav
+        class="fixed w-full z-50 glass-panel border-b border-white/10"
+        aria-label="Main navigation"
+    >
         <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
-                <i data-lucide="server" class="text-slate-300 w-5 h-5"></i>
-                <span class="font-bold text-lg tracking-tight text-white">IsoFlow Systems</span>
+
+            <a
+                href="/"
+                class="flex items-center gap-3 hover:opacity-80 transition-opacity"
+            >
+                <i
+                    data-lucide="shield-check"
+                    class="text-slate-300 w-5 h-5"
+                    aria-hidden="true"
+                ></i>
+
+                <span class="font-bold text-lg tracking-tight text-white">
+                    IsoFlow Systems
+                </span>
             </a>
+
             <div class="hidden md:flex items-center gap-6 text-sm font-medium text-neutral-400">
-                <a href="/security.html" class="hover:text-white transition-colors">Security Specs</a>
-                <a href="/terms.html" class="hover:text-white transition-colors">Terms of Service</a>
+                <a
+                    href="/security.html"
+                    class="hover:text-white transition-colors"
+                >
+                    Security Specs
+                </a>
+
+                <a
+                    href="/terms.html"
+                    class="hover:text-white transition-colors"
+                >
+                    Terms of Service
+                </a>
             </div>
+
         </div>
     </nav>
 
-    <section class="pt-32 pb-24">
-        <div class="max-w-3xl mx-auto px-6">
-            <h1 class="text-4xl font-bold text-white mb-2">Privacy Policy</h1>
-            <p class="text-neutral-500 mb-12 font-mono text-sm">Last Updated: February 2026</p>
+    <main>
+        <section class="pt-32 pb-24">
+            <div class="max-w-3xl mx-auto px-6">
 
-            <div class="space-y-8 text-sm text-neutral-400 leading-relaxed">
-                
-                <section>
-                    <h2 class="text-xl font-bold text-white mb-3">1. Introduction</h2>
-                    <p>At IsoFlow Systems ("we", "our", or "us"), we prioritize your privacy and data security. This Privacy Policy explains how we collect, use, and protect your information when you use our stateless evidence mapping engine.</p>
-                </section>
+                <h1 class="text-4xl font-bold text-white mb-2">
+                    Privacy Policy
+                </h1>
 
-                <section>
-                    <h2 class="text-xl font-bold text-white mb-3">2. Processing of Audit Documents (The Stateless Guarantee)</h2>
-                    <p class="mb-2">IsoFlow is explicitly designed as a <strong>stateless processor</strong>.</p>
-                    <ul class="list-disc pl-5 space-y-1">
-                        <li><strong>No Storage:</strong> The PDF, DOCX, and CSV files you upload are processed entirely in volatile memory (RAM).</li>
-                        <li><strong>Immediate Deletion:</strong> The moment your browser receives the generated Excel export, your session data is permanently destroyed. We do not retain, log, or backup your client documents.</li>
-                        <li><strong>No AI Training:</strong> Your documents are never used to train our AI models or third-party LLMs.</li>
-                    </ul>
-                </section>
+                <p class="text-neutral-500 mb-12 font-mono text-sm">
+                    Last updated: October 25, 2026
+                </p>
 
-                <section>
-                    <h2 class="text-xl font-bold text-white mb-3">3. Information We Actually Collect</h2>
-                    <p class="mb-2">To provide our service, manage your account, and handle billing, we collect limited administrative data:</p>
-                    <ul class="list-disc pl-5 space-y-1">
-                        <li><strong>Account Information:</strong> Name, email address, and professional title when you request pilot access.</li>
-                        <li><strong>Billing Information:</strong> Processed securely via our payment processor (Stripe). We do not store credit card numbers on our servers.</li>
-                        <li><strong>Usage Metadata:</strong> Anonymous connection telemetry (e.g., number of mapping requests processed) to monitor API uptime.</li>
-                    </ul>
-                </section>
+                <div class="space-y-8 text-sm text-neutral-400 leading-relaxed">
 
-                <section>
-                    <h2 class="text-xl font-bold text-white mb-3">4. Third-Party Subprocessors</h2>
-                    <p>We use trusted, SOC-2 compliant vendors to operate our infrastructure: Google Cloud Platform (hosting), Stripe (payments), and Tally (forms). We also interface with enterprise LLM APIs under strict zero-retention data processing agreements.</p>
-                </section>
+                    <!-- 1. Introduction -->
+                    <section>
+                        <h2 class="text-xl font-bold text-white mb-3">
+                            1. Introduction
+                        </h2>
 
-                <section>
-                    <h2 class="text-xl font-bold text-white mb-3">5. Contact Us</h2>
-                    <p>If you have any questions about this Privacy Policy or our security practices, please contact our Lead Engineer at: <a href="mailto:rohanadat@isoflowai.in" class="text-emerald-400 hover:underline">rohanadat@isoflowai.in</a>.</p>
-                </section>
+                        <p>
+                            This Privacy Policy explains how IsoFlow Systems
+                            ("IsoFlow", "we", "our", or "us") handles information
+                            when you visit our website, use our document-processing
+                            service, contact us, submit a business project request,
+                            or apply to join our independent practitioner network.
+                            IsoFlow is designed for business and professional use.
+                        </p>
+                    </section>
 
+                    <!-- 2. Information Collected -->
+                    <section>
+                        <h2 class="text-xl font-bold text-white mb-3">
+                            2. Information We Collect
+                        </h2>
+
+                        <p class="mb-2">
+                            Depending on how you use IsoFlow, we may collect the
+                            following information:
+                        </p>
+
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>
+                                <strong class="text-neutral-200">
+                                    Documents and processing inputs:
+                                </strong>
+                                Files, control matrices, text, and related content
+                                you submit to generate compliance mappings and
+                                other requested outputs.
+                            </li>
+
+                            <li>
+                                <strong class="text-neutral-200">
+                                    Business project requests:
+                                </strong>
+                                Organization name, contact name, email address,
+                                compliance framework, project summary, and any
+                                timeline or budget details you choose to provide.
+                            </li>
+
+                            <li>
+                                <strong class="text-neutral-200">
+                                    Practitioner applications:
+                                </strong>
+                                Name, email address, professional role, skills,
+                                frameworks, experience or credentials you choose
+                                to share, availability, and preferred project types.
+                            </li>
+
+                            <li>
+                                <strong class="text-neutral-200">
+                                    Communications:
+                                </strong>
+                                Information you include in emails, support requests,
+                                or other messages to us.
+                            </li>
+
+                            <li>
+                                <strong class="text-neutral-200">
+                                    Technical information:
+                                </strong>
+                                Technical or diagnostic information that may be
+                                processed by the website, hosting, security, and
+                                other service providers when you access our services.
+                            </li>
+                        </ul>
+
+                        <p class="mt-3">
+                            Please submit only information relevant to the service
+                            or request. Make sure you have the authority to provide
+                            any documents or information you submit. Avoid including
+                            passwords, access credentials, or personal information
+                            that is not needed for the requested work.
+                        </p>
+                    </section>
+
+                    <!-- 3. Use of Information -->
+                    <section>
+                        <h2 class="text-xl font-bold text-white mb-3">
+                            3. How We Use Information
+                        </h2>
+
+                        <p class="mb-2">
+                            We use information for purposes such as:
+                        </p>
+
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>
+                                Processing submitted documents and generating
+                                requested compliance-related outputs.
+                            </li>
+
+                            <li>
+                                Responding to questions and providing
+                                service-related communications.
+                            </li>
+
+                            <li>
+                                Reviewing business project requests and
+                                practitioner applications.
+                            </li>
+
+                            <li>
+                                Considering and facilitating relevant introductions
+                                between businesses and independent practitioners
+                                when appropriate.
+                            </li>
+
+                            <li>
+                                Operating, maintaining, securing, and improving
+                                our website and services.
+                            </li>
+
+                            <li>
+                                Preventing misuse, resolving disputes, and meeting
+                                applicable legal obligations.
+                            </li>
+                        </ul>
+
+                        <p class="mt-3">
+                            Submitting a project request or practitioner application
+                            does not guarantee acceptance, an introduction, a project
+                            assignment, paid work, or a particular business outcome.
+                        </p>
+                    </section>
+
+                    <!-- 4. Document Processing -->
+                    <section>
+                        <h2 class="text-xl font-bold text-white mb-3">
+                            4. Document Processing and Retention
+                        </h2>
+
+                        <p class="mb-3">
+                            The current demonstration service processes submitted
+                            documents to generate compliance mappings and related
+                            outputs. The current demonstration is not connected to
+                            a database for persistent storage of uploaded documents,
+                            and uploaded files are intended to be temporary and
+                            removed after the processing session.
+                        </p>
+
+                        <p class="mb-3">
+                            Document content may be sent to the AI provider used
+                            by the demonstration to generate the requested output.
+                            The processing and retention of that content may also
+                            depend on the provider's service terms and configuration.
+                        </p>
+
+                        <p>
+                            IsoFlow aims to handle submitted documents for the
+                            requested processing purpose. The statement that files
+                            are intended to be temporary does not mean every copy
+                            is guaranteed to disappear immediately from every
+                            system; technical files, logs, hosting systems, and
+                            service providers may have separate handling and
+                            retention processes. Please do not submit information
+                            unless you are authorized to share it and are comfortable
+                            using the current demonstration service.
+                        </p>
+                    </section>
+
+                    <!-- 5. AI Providers -->
+                    <section>
+                        <h2 class="text-xl font-bold text-white mb-3">
+                            5. AI Processing: Demo and Planned Paid Service
+                        </h2>
+
+                        <p class="mb-3">
+                            <strong class="text-neutral-200">
+                                Current demo — Google Gemini:
+                            </strong>
+                            The current demonstration may transmit submitted
+                            document content to Google's Gemini service for AI
+                            processing. The handling of that content is subject
+                            to the applicable Google service terms, privacy terms,
+                            and configuration.
+                        </p>
+
+                        <p class="mb-3">
+                            <strong class="text-neutral-200">
+                                Planned paid service — Amazon Bedrock on AWS:
+                            </strong>
+                            IsoFlow plans to use Amazon Web Services (AWS),
+                            including Amazon Bedrock, for AI processing in its
+                            paid service. This is planned infrastructure and is
+                            not a statement that the paid environment is already
+                            deployed. The specific foundation model, AWS services,
+                            and processing configuration will be determined by
+                            the deployed architecture.
+                        </p>
+
+                        <p>
+                            Before the paid service launches, this Policy will
+                            be reviewed against the actual processing and retention
+                            arrangements. We describe the demo and paid service
+                            separately because they may use different infrastructure
+                            and data-handling configurations.
+                        </p>
+                    </section>
+
+                    <!-- 6. Service Providers -->
+                    <section>
+                        <h2 class="text-xl font-bold text-white mb-3">
+                            6. Trusted Service Providers
+                        </h2>
+
+                        <p class="mb-3">
+                            IsoFlow uses third-party technology providers to operate
+                            its website, process documents, deliver AI functionality,
+                            transmit form submissions, and support relevant
+                            operational, payment, and security functions.
+                            Information is shared with a provider when needed
+                            for that provider to perform its role in delivering
+                            or supporting the service.
+                        </p>
+
+                        <p>
+                            We work to limit information shared with service
+                            providers to what is relevant to their role. Providers
+                            may process information under their own applicable
+                            terms, policies, and configurations. Our providers
+                            and configurations may change as the service develops.
+                        </p>
+                    </section>
+
+                    <!-- 7. Information Sharing -->
+                    <section>
+                        <h2 class="text-xl font-bold text-white mb-3">
+                            7. How Information Is Shared
+                        </h2>
+
+                        <p class="mb-3">
+                            Documents and information submitted for compliance
+                            analysis are used to provide the requested service.
+                            IsoFlow does not make customer compliance documents
+                            publicly available or share them with unrelated
+                            businesses for their independent use.
+                        </p>
+
+                        <p class="mb-3">
+                            If you request a business introduction or practitioner
+                            connection, we may share relevant contact and project
+                            information with the prospective party to help assess
+                            or facilitate that introduction.
+                        </p>
+
+                        <p class="mb-3">
+                            We may also disclose information when required by
+                            applicable law or lawful process, or when reasonably
+                            necessary to protect our rights, users, or the security
+                            of our services.
+                        </p>
+
+                        <p>
+                            IsoFlow does not sell personal information to data brokers.
+                        </p>
+                    </section>
+
+                    <!-- 8. Forms and Email -->
+                    <section>
+                        <h2 class="text-xl font-bold text-white mb-3">
+                            8. Forms and Email Communications
+                        </h2>
+
+                        <p class="mb-3">
+                            Business project requests and practitioner applications
+                            may be submitted through a third-party form or email
+                            intake service and delivered to our designated email
+                            inbox for review. The provider processes the information
+                            you enter to transmit your submission.
+                        </p>
+
+                        <p>
+                            Please do not use public intake forms to send
+                            confidential compliance evidence or documents.
+                            Information included in an email may remain in the
+                            relevant inboxes and provider systems until deleted,
+                            subject to available controls and applicable retention
+                            practices.
+                        </p>
+                    </section>
+
+                    <!-- 9. Retention and Deletion -->
+                    <section>
+                        <h2 class="text-xl font-bold text-white mb-3">
+                            9. Retention and Deletion Requests
+                        </h2>
+
+                        <p class="mb-3">
+                            We retain business contact details, application
+                            information, and communications for as long as
+                            reasonably needed to respond to requests, manage
+                            relationships, maintain appropriate business records,
+                            resolve disputes, and meet legal obligations.
+                            Retention can vary by information type and system.
+                        </p>
+
+                        <p>
+                            You may contact us to request access to, correction
+                            of, or deletion of personal information, or to ask a
+                            question about how it is handled. We will review
+                            requests under applicable law and may need to verify
+                            your identity or authority. Deleting information from
+                            our own records may not immediately delete copies
+                            held by email, hosting, or other service providers;
+                            we will take reasonable steps where appropriate and
+                            available. Information may be retained where required
+                            or permitted by law.
+                        </p>
+                    </section>
+
+                    <!-- 10. Security -->
+                    <section>
+                        <h2 class="text-xl font-bold text-white mb-3">
+                            10. Security
+                        </h2>
+
+                        <p>
+                            We take reasonable steps intended to protect information
+                            handled through our services. No online service or
+                            transmission method can guarantee absolute security.
+                            Users can help protect their information by submitting
+                            only necessary materials, ensuring they have permission
+                            to share them, and avoiding the submission of passwords
+                            or unrelated sensitive data.
+                        </p>
+
+                        <p class="mt-3">
+                            If you have a privacy or security concern about
+                            information submitted to IsoFlow, contact us using
+                            the details below so we can review it.
+                        </p>
+                    </section>
+
+                    <!-- 11. Privacy Rights -->
+                    <section>
+                        <h2 class="text-xl font-bold text-white mb-3">
+                            11. Your Privacy Choices and Rights
+                        </h2>
+
+                        <p>
+                            Depending on applicable law, you may have rights to
+                            request information about personal data processing,
+                            seek correction or deletion, withdraw consent where
+                            consent is the applicable basis for processing, or
+                            raise a privacy grievance. To make a request, contact
+                            us at the email address below. We will review and
+                            respond in accordance with applicable requirements.
+                        </p>
+                    </section>
+
+                    <!-- 12. Cookies -->
+                    <section>
+                        <h2 class="text-xl font-bold text-white mb-3">
+                            12. Cookies and Technical Information
+                        </h2>
+
+                        <p>
+                            The website or its service providers may use cookies
+                            or similar technologies and process technical information
+                            for website functionality, security, and diagnostics.
+                            The specific information processed depends on the
+                            features and services enabled. Where applicable law
+                            requires additional notice or consent, we will provide
+                            it as required.
+                        </p>
+                    </section>
+
+                    <!-- 13. Children's Privacy -->
+                    <section>
+                        <h2 class="text-xl font-bold text-white mb-3">
+                            13. Children's Privacy
+                        </h2>
+
+                        <p>
+                            IsoFlow is intended for business and professional use
+                            and is not designed for children. Please do not submit
+                            children's personal information unless you are legally
+                            authorized to do so and the information is necessary
+                            for a legitimate purpose. If you believe such
+                            information has been submitted inappropriately,
+                            contact us so we can review the matter.
+                        </p>
+                    </section>
+
+                    <!-- 14. Policy Changes -->
+                    <section>
+                        <h2 class="text-xl font-bold text-white mb-3">
+                            14. Changes to This Policy
+                        </h2>
+
+                        <p>
+                            We may update this Privacy Policy when our services,
+                            data practices, or legal obligations change. The
+                            revised version will be published on this page with
+                            an updated date. Please review this page periodically,
+                            particularly when using new features or services.
+                        </p>
+                    </section>
+
+                    <!-- 15. Contact -->
+                    <section>
+                        <h2 class="text-xl font-bold text-white mb-3">
+                            15. Contact Us
+                        </h2>
+
+                        <p>
+                            For privacy questions, requests, or concerns about
+                            this Policy, contact:
+                        </p>
+
+                        <p class="mt-3">
+                            <strong class="text-neutral-200">
+                                IsoFlow Systems
+                            </strong>
+                            <br>
+                            Email:
+                            <a
+                                href="mailto:rohan@isoflowai.in"
+                                class="text-emerald-400 hover:underline"
+                            >
+                                rohan@isoflowai.in
+                            </a>
+                        </p>
+                    </section>
+
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer class="border-t border-white/10 bg-[#050505] pt-12 pb-8">
         <div class="max-w-7xl mx-auto px-6 text-center text-xs text-neutral-600">
-            <p>&copy; 2026 IsoFlow Systems. Pune, India.</p>
+            <p>&copy; 2026 IsoFlow Systems. India.</p>
         </div>
     </footer>
 
-    <script>lucide.createIcons();</script>
+    <script>
+        lucide.createIcons();
+    </script>
+
 </body>
 </html>
