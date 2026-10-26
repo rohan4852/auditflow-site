@@ -1,146 +1,60 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API Documentation | IsoFlow Systems</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.19.3/inter.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        body { font-family: 'Inter', sans-serif; background-color: #050505; color: #d4d4d4; }
-        .glass-panel { background: #0f0f0f; border: 1px solid #262626; }
-        .code-block { background: #0a0a0a; border: 1px solid #333; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Learn about IsoFlow's human-reviewed compliance evidence-mapping service for ISO 27001 and SOC 2 workflows.">
+<title>Product & Service Guide | IsoFlow Systems</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1020;--text:#edf2ff;--muted:#aab6ce;--line:#26334c;--accent:#8db7ff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#15213b,var(--bg) 55%);color:var(--text);font:16px/1.7 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+header,main,footer{width:min(900px,calc(100% - 36px));margin:auto}header{padding:24px 0;border-bottom:1px solid var(--line)}a{color:var(--accent)}header a,footer a{text-decoration:none}.brand{font-weight:750}.nav{float:right}main{padding-bottom:50px}.eyebrow{margin-top:38px;color:var(--accent);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase}h1{font-size:clamp(2rem,5vw,3rem);line-height:1.15;letter-spacing:-.04em;margin:0 0 16px}h2{font-size:1.25rem;line-height:1.3}p,li{color:#d6deef}.intro,.updated{color:var(--muted)}.updated{font-size:.9rem}.notice,.card{border:1px solid #34435f;background:#121e34;border-radius:14px;padding:18px 20px;margin:22px 0}section{border-top:1px solid var(--line);padding:18px 0;margin-top:18px}li{margin:7px 0}footer{border-top:1px solid var(--line);padding:22px 0 30px;color:var(--muted);font-size:.9rem}
+</style>
 </head>
-<body class="antialiased selection:bg-slate-600 selection:text-white">
+<body>
+<header><a class="brand" href="/">IsoFlow Systems</a><span class="nav"><a href="/">Home</a> · <a href="/security.html">Security</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></span></header>
+<main>
+<p class="eyebrow">Product &amp; service guide</p>
+<h1>Compliance evidence mapping, with human review</h1>
+<p class="intro">IsoFlow helps compliance professionals organize potential evidence from policy documents against a control framework such as ISO 27001 or SOC 2. The current offering is a scoped, human-reviewed service—not a publicly available API.</p>
+<p class="updated">Last updated: October 26, 2026</p>
+<div class="notice"><strong>Current availability:</strong> IsoFlow currently offers evidence-mapping engagements by discussion. Public API access and self-serve engine subscriptions are not available. Future workspace tiers will be announced when ready.</div>
 
-    <nav class="fixed w-full z-50 glass-panel border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
-                <i data-lucide="server" class="text-slate-300 w-5 h-5"></i>
-                <span class="font-bold text-lg tracking-tight text-white">IsoFlow Systems</span>
-            </a>
-            <div class="hidden md:flex items-center gap-6 text-sm font-medium text-neutral-400">
-                <a href="/security.html" class="hover:text-white transition-colors">Security Specs</a>
-                <a href="https://stats.uptimerobot.com/Uc7loBFQeL" target="_blank" class="flex items-center gap-2 hover:opacity-80 transition-opacity bg-emerald-950/30 px-3 py-1.5 rounded-full border border-emerald-900/50">
-                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                    <span class="text-emerald-500 font-mono text-xs font-semibold">API: Operational</span>
-                </a>
-            </div>
-        </div>
-    </nav>
+<section><h2>1. What the service helps with</h2>
+<ul>
+<li>Review policy and procedure documents for statements that may support control requirements.</li>
+<li>Organize potentially relevant evidence against a supplied control matrix.</li>
+<li>Preserve source references, such as document text or page references, where available in the source and output.</li>
+<li>Prepare structured results for a reviewer to inspect and refine.</li>
+</ul>
+<p>Results depend on the source documents, their structure and quality, the control matrix, and the agreed scope. Not every document will contain evidence for every control.</p></section>
 
-    <section class="pt-32 pb-24">
-        <div class="max-w-4xl mx-auto px-6">
-            <div class="mb-12 border-b border-white/10 pb-8">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-sm glass-panel text-emerald-500 text-xs font-mono uppercase tracking-wide mb-4 border-emerald-500/30">
-                    <i data-lucide="terminal" class="w-3 h-3"></i> API Version 1.0
-                </div>
-                <h1 class="text-4xl font-bold text-white mb-4">IsoFlow API Reference</h1>
-                <p class="text-neutral-400">Integrate our stateless evidence mapping engine directly into your own GRC platforms or internal workflows. All data is processed entirely in memory.</p>
-            </div>
+<section><h2>2. Typical engagement workflow</h2>
+<div class="card"><h2>Step 1 — Scope the work</h2><p>Discuss the framework, document set, desired output, control matrix, confidentiality requirements, and review needs before submitting materials.</p></div>
+<div class="card"><h2>Step 2 — Analyze documents</h2><p>Documents are processed to identify text and statements that may be relevant to the agreed controls. AI-assisted processing may be used as part of this workflow.</p></div>
+<div class="card"><h2>Step 3 — Human review</h2><p>Potential matches and source references are reviewed within the agreed scope. The level of review and any limitations should be confirmed in the engagement description.</p></div>
+<div class="card"><h2>Step 4 — Deliver reviewable results</h2><p>Results may be provided in a structured spreadsheet or another agreed format so your team can verify source references, assess evidence sufficiency, and decide next steps.</p></div>
+</section>
 
-            <div class="space-y-12 text-sm text-neutral-400 leading-relaxed">
-                
-                <section>
-                    <h2 class="text-2xl font-bold text-white mb-4">Authentication</h2>
-                    <p class="mb-4">All API requests must be authenticated via a Bearer Token provided during your pilot onboarding. Include the token in the Authorization header of your HTTP request.</p>
-                    <div class="code-block p-4 rounded-md text-slate-300 overflow-x-auto">
-                        <code>Authorization: Bearer isf_live_xxxxxxxxxxxxxxxxx</code>
-                    </div>
-                </section>
+<section><h2>3. Outputs and source references</h2>
+<p>Depending on the agreed engagement and available source information, results may include a control reference, a potentially relevant evidence excerpt, a source document or page reference, and reviewer notes. These fields are not guaranteed for every source or every control; confirm the required output before work begins.</p>
+<p>IsoFlow's outputs are intended to support verification. Customers and qualified reviewers should check quotations, page references, control interpretations, and evidence sufficiency against the original documents.</p></section>
 
-                <section>
-                    <h2 class="text-2xl font-bold text-white mb-4">Mapping Orchestration Endpoint</h2>
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="bg-emerald-500/20 text-emerald-400 font-bold px-2 py-1 rounded text-xs">POST</span>
-                        <code class="text-white">/v1/engine/map</code>
-                    </div>
-                    <p class="mb-4">Uploads a raw policy document, orchestrates the control extraction in volatile RAM, and returns a strict JSON array of mapped controls and verbatim citations.</p>
+<section><h2>4. AI processing and data handling</h2>
+<p>The current demo may use Google Gemini for AI-assisted processing. A paid-service architecture using AWS and Amazon Bedrock is planned, but is not represented as deployed. The provider and configuration used for a specific engagement should be confirmed before sensitive documents are submitted.</p>
+<p>Review the <a href="/security.html">Security Overview</a> and <a href="/privacy.html">Privacy Policy</a>. Do not submit sensitive client evidence until you have reviewed the processing arrangements and confirmed you are authorized to share it.</p></section>
 
-                    <h4 class="text-white font-semibold mb-2 mt-6">Request Headers</h4>
-                    <ul class="list-disc pl-5 space-y-1 mb-4">
-                        <li><code>Content-Type: multipart/form-data</code></li>
-                    </ul>
+<section><h2>5. What the service is not</h2>
+<ul>
+<li>It is not a public API offering or a promise of direct engine access.</li>
+<li>It is not a substitute for an independent audit, legal advice, or professional compliance judgment.</li>
+<li>AI-assisted matches are not guaranteed to be complete or correct and should be reviewed before use.</li>
+<li>IsoFlow does not guarantee audit success, certification, or compliance with a particular standard.</li>
+</ul></section>
 
-                    <h4 class="text-white font-semibold mb-2 mt-6">Parameters</h4>
-                    <div class="glass-panel rounded-md overflow-hidden">
-                        <table class="w-full text-left text-sm">
-                            <thead class="bg-slate-900/50 text-slate-300 border-b border-white/10">
-                                <tr>
-                                    <th class="p-4 font-medium">Field</th>
-                                    <th class="p-4 font-medium">Type</th>
-                                    <th class="p-4 font-medium">Description</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-white/5 text-neutral-400">
-                                <tr>
-                                    <td class="p-4 font-mono text-emerald-400">file</td>
-                                    <td class="p-4">File (Binary)</td>
-                                    <td class="p-4">Required. The raw policy document (PDF, DOCX, TXT). Max size: 200MB.</td>
-                                </tr>
-                                <tr>
-                                    <td class="p-4 font-mono text-emerald-400">framework</td>
-                                    <td class="p-4">String</td>
-                                    <td class="p-4">Required. Enum: <code>iso27001_2022</code>, <code>soc2_type2</code>, <code>custom_matrix</code></td>
-                                </tr>
-                                <tr>
-                                    <td class="p-4 font-mono text-emerald-400">custom_matrix</td>
-                                    <td class="p-4">File (CSV)</td>
-                                    <td class="p-4">Optional. Required only if <code>framework</code> is set to <code>custom_matrix</code>.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-bold text-white mb-4">Response Schema</h2>
-                    <p class="mb-4">The engine returns a <code>200 OK</code> with a strict JSON array representing the audit trail. Because the system is stateless, the connection is kept alive until processing completes (typically 15-30 seconds depending on document length).</p>
-                    
-                    <div class="code-block p-4 rounded-md text-slate-300 overflow-x-auto text-xs leading-relaxed">
-<pre><code>{
-  "status": "success",
-  "processing_time_ms": 14205,
-  "stateless_purge": true,
-  "results": [
-    {
-      "control_id": "A.5.1",
-      "control_name": "Policies for information security",
-      "status": "Mapped",
-      "verbatim_evidence": "The organization shall review the information security policy at planned intervals or if significant changes occur to ensure its continuing suitability.",
-      "page_number": 4,
-      "confidence_score": 0.98
-    },
-    {
-      "control_id": "A.5.2",
-      "control_name": "Information security roles and responsibilities",
-      "status": "Not Found",
-      "verbatim_evidence": null,
-      "page_number": null,
-      "confidence_score": 0.0
-    }
-  ]
-}</code></pre>
-                    </div>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-bold text-white mb-4">Rate Limits & SLAs</h2>
-                    <p>To ensure high availability of our ephemeral compute clusters, API access is currently rate-limited to <strong>50 concurrent document mappings per minute</strong> per organization. For higher throughput, please contact engineering for dedicated cluster provisioning.</p>
-                </section>
-
-            </div>
-        </div>
-    </section>
-
-    <footer class="border-t border-white/10 bg-[#050505] pt-12 pb-8">
-        <div class="max-w-7xl mx-auto px-6 text-center text-xs text-neutral-600">
-            <p>&copy; 2026 IsoFlow Systems. Pune, India.</p>
-        </div>
-    </footer>
-
-    <script>lucide.createIcons();</script>
-</body>
-</html>
+<section><h2>6. Scope, availability, and contact</h2>
+<p>Deliverables, document types, framework or control matrix, review level, turnaround, fees, and exclusions are agreed for each engagement. Do not assume a specific file-size limit, processing time, service-level commitment, or technical feature unless it is confirmed in writing.</p>
+<p>To discuss a workflow or request a scoped engagement, contact <a href="mailto:rohan@isoflowai.in">rohan@isoflowai.in</a>.</p></section>
+</main>
+<footer>© 2026 IsoFlow Systems · <a href="/">Home</a> · <a href="/security.html">Security</a> · <a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms of Service</a></footer>
+</body></html>
