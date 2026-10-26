@@ -1,97 +1,35 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Security Specifications | IsoFlow Systems</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.19.3/inter.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        body { font-family: 'Inter', sans-serif; background-color: #050505; color: #d4d4d4; }
-        .glass-panel { background: #0f0f0f; border: 1px solid #262626; }
-    </style>
-</head>
-<body class="antialiased selection:bg-slate-600 selection:text-white">
-
-    <nav class="fixed w-full z-50 glass-panel border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
-                <i data-lucide="server" class="text-slate-300 w-5 h-5"></i>
-                <span class="font-bold text-lg tracking-tight text-white">IsoFlow Systems</span>
-            </a>
-            <div class="hidden md:flex items-center gap-6 text-sm font-medium text-neutral-400">
-                <a href="/#product" class="hover:text-white transition-colors">Interface</a>
-                <a href="/#pricing" class="hover:text-white transition-colors">Pricing</a>
-                <a href="/security.html" class="text-white transition-colors">Security Specs</a>
-            </div>
-        </div>
-    </nav>
-
-    <section class="pt-32 pb-24">
-        <div class="max-w-4xl mx-auto px-6">
-            <div class="mb-12">
-                <h1 class="text-4xl font-bold text-white mb-4">Security Architecture & Specifications</h1>
-                <p class="text-neutral-400">Detailed technical specifications regarding data handling, encryption, and infrastructure.</p>
-            </div>
-
-            <div class="space-y-6 text-sm text-neutral-400 leading-relaxed">
-                
-                <div class="glass-panel p-8 rounded-xl">
-                    <div class="flex items-center gap-3 mb-4">
-                        <i data-lucide="cpu" class="w-5 h-5 text-emerald-500"></i>
-                        <h2 class="text-xl font-bold text-white">1. Stateless Processing (Zero Data Retention)</h2>
-                    </div>
-                    <p class="mb-4">IsoFlow operates as a completely stateless engine. We do not use databases to store user uploaded documents, mapped controls, or generated outputs.</p>
-                    <ul class="list-disc pl-5 space-y-2">
-                        <li>Documents are ingested directly into volatile memory (RAM).</li>
-                        <li>The mapping orchestration occurs entirely within the ephemeral compute instance.</li>
-                        <li>Upon generation of the Excel export, the session is terminated and memory is instantly purged.</li>
-                    </ul>
-                </div>
-
-                <div class="glass-panel p-8 rounded-xl">
-                    <div class="flex items-center gap-3 mb-4">
-                        <i data-lucide="lock" class="w-5 h-5 text-emerald-500"></i>
-                        <h2 class="text-xl font-bold text-white">2. Encryption Standards</h2>
-                    </div>
-                    <p class="mb-4">All data transmitted between the client browser and IsoFlow's processing layer is encrypted in transit.</p>
-                    <ul class="list-disc pl-5 space-y-2">
-                        <li><strong>In Transit:</strong> TLS 1.3 encryption is enforced globally across all endpoints.</li>
-                        <li><strong>At Rest:</strong> Because IsoFlow is stateless, user evidence data is never written to persistent storage, rendering traditional encryption-at-rest requirements inapplicable to customer payloads.</li>
-                    </ul>
-                </div>
-
-                <div class="glass-panel p-8 rounded-xl">
-                    <div class="flex items-center gap-3 mb-4">
-                        <i data-lucide="shield-off" class="w-5 h-5 text-emerald-500"></i>
-                        <h2 class="text-xl font-bold text-white">3. LLM Subprocessors & Model Training</h2>
-                    </div>
-                    <p class="mb-4">IsoFlow orchestrates enterprise-tier LLM APIs (including Google Cloud and Anthropic) strictly for text extraction and semantic cross-referencing.</p>
-                    <ul class="list-disc pl-5 space-y-2">
-                        <li><strong>Zero Training Guarantee:</strong> We operate under strict Enterprise Data Processing Agreements (DPAs). Your proprietary policy documents are <strong>never</strong> used to train, fine-tune, or improve foundational models.</li>
-                        <li><strong>Zero Retention APIs:</strong> Prompts and responses sent to our LLM subprocessors are not logged or retained by the provider.</li>
-                    </ul>
-                </div>
-
-                <div class="glass-panel p-8 rounded-xl">
-                    <div class="flex items-center gap-3 mb-4">
-                        <i data-lucide="server" class="w-5 h-5 text-emerald-500"></i>
-                        <h2 class="text-xl font-bold text-white">4. Cloud Infrastructure</h2>
-                    </div>
-                    <p>The IsoFlow orchestration engine is hosted on Google Cloud Platform (GCP). The underlying infrastructure data centers maintain strict physical and logical security controls and are certified for SOC 2 Type II, ISO 27001, and ISO 27017.</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <footer class="border-t border-white/10 bg-[#050505] pt-12 pb-8">
-        <div class="max-w-7xl mx-auto px-6 text-center text-xs text-neutral-600">
-            <p>&copy; 2026 IsoFlow Systems. Pune, India.</p>
-        </div>
-    </footer>
-
-    <script>lucide.createIcons();</script>
-</body>
-</html>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="IsoFlow Systems security and data-handling overview."><title>Security Overview | IsoFlow Systems</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1020;--text:#edf2ff;--muted:#aab6ce;--line:#26334c;--accent:#8db7ff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#15213b,var(--bg) 55%);color:var(--text);font:16px/1.7 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+header,main,footer{width:min(900px,calc(100% - 36px));margin:auto}header{padding:24px 0;border-bottom:1px solid var(--line)}a{color:var(--accent)}header a,footer a{text-decoration:none}.brand{font-weight:750}.nav{float:right}main{padding-bottom:50px}.eyebrow{margin-top:38px;color:var(--accent);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase}h1{font-size:clamp(2rem,5vw,3rem);line-height:1.15;letter-spacing:-.04em;margin:0 0 16px}h2{font-size:1.25rem;line-height:1.3}p,li{color:#d6deef}.intro,.updated{color:var(--muted)}.updated{font-size:.9rem}.notice,.card{border:1px solid #34435f;background:#121e34;border-radius:14px;padding:18px 20px;margin:22px 0}section{border-top:1px solid var(--line);padding:18px 0;margin-top:18px}li{margin:7px 0}footer{border-top:1px solid var(--line);padding:22px 0 30px;color:var(--muted);font-size:.9rem}
+</style></head><body>
+<header><a class="brand" href="/">IsoFlow Systems</a><span class="nav"><a href="/">Home</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></span></header>
+<main><p class="eyebrow">Security &amp; data handling</p><h1>A clear view of document processing</h1>
+<p class="intro">IsoFlow helps compliance professionals review policy documents and organize potential evidence against control requirements. This page distinguishes the current demo from planned paid-service infrastructure.</p>
+<p class="updated">Last updated: October 26, 2026</p>
+<div class="notice"><strong>Current vs. planned:</strong> The current demo uses Google Gemini for AI-assisted processing. A paid service using AWS and Amazon Bedrock is planned, but is not represented as deployed. Provider, configuration, and applicable terms must be confirmed for the specific service used.</div>
+<section><h2>1. Current document processing</h2>
+<p>The current demo is not connected to a database for persistent storage of uploaded documents. Files are intended to be temporary and used to process the session and produce the requested output.</p>
+<p>This does not guarantee that every temporary copy, application or infrastructure log, diagnostic record, browser download, or third-party provider record is immediately erased. Actual handling can depend on hosting, operational configuration, and the services involved.</p>
+<p>Please do not upload highly sensitive client evidence unless you have reviewed the current processing arrangements and are authorized to share it.</p></section>
+<section><h2>2. AI processing and third-party providers</h2>
+<div class="card"><h2>Current demo</h2><p>The demo may send document text or related processing inputs to Google Gemini for AI-assisted extraction and mapping. Google’s service terms, data-handling practices, and the configuration used may affect how that information is handled.</p></div>
+<div class="card"><h2>Planned paid service</h2><p>The planned paid-service architecture is intended to use AWS and Amazon Bedrock. This is a roadmap item, not a statement that the service is already deployed or that a particular retention setting, contractual protection, or model configuration is active. Relevant details will be confirmed before that service is offered.</p></div>
+<p>Other service providers may support website hosting, enquiry forms, operations, or requested features. Providers may differ by feature and change over time.</p></section>
+<section><h2>3. Transmission and access</h2>
+<p>Use the official HTTPS website when submitting information. Encryption and other safeguards depend on the systems and services involved; this page does not claim that every endpoint uses a particular TLS version or that every system has identical controls.</p>
+<p>Access to submitted information should be limited to what is needed to operate the service and respond to a request. This overview is not an independent security audit, penetration test, certification, or service-level commitment.</p></section>
+<section><h2>4. What IsoFlow does not claim</h2><ul>
+<li>No guarantee of zero data retention or instant purging across every system.</li><li>No claim that every provider retains no prompts, responses, logs, or operational records.</li>
+<li>No claim that IsoFlow holds SOC 2, ISO 27001, or another security certification unless explicitly confirmed in a separate current statement.</li>
+<li>No guarantee that AI-generated mappings are complete, accurate, or ready for audit submission without review.</li></ul></section>
+<section><h2>5. Customer responsibilities</h2><ul>
+<li>Confirm you have permission to submit documents and any personal or confidential information they contain.</li><li>Remove or redact information that is not necessary for the requested analysis.</li>
+<li>Review extracted evidence, control mappings, and generated outputs before relying on them or sharing them with a client, auditor, or certification body.</li>
+<li>Contact IsoFlow before sending sensitive material if you need to clarify processing arrangements for a particular engagement.</li></ul></section>
+<section><h2>6. Questions or security concerns</h2><p>For questions about document handling or to report a suspected security issue, contact <a href="mailto:rohan@isoflowai.in">rohan@isoflowai.in</a>. Please do not email confidential compliance evidence unless the handling method has been agreed in advance.</p>
+<p>This page is a high-level description, not a promise of a particular technical control or a substitute for written terms agreed for a specific engagement.</p></section></main>
+<footer>© 2026 IsoFlow Systems · <a href="/">Home</a> · <a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms of Service</a></footer></body></html>
